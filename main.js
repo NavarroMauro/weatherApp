@@ -53,13 +53,15 @@ let convertUnixTimeStamps = (unixtimestamp) => {
     return convdataTime;
 }
 
-// let timingAppear = (urlD, time) => {
-//     return new Promise((resolve, reject) => {
-//         setTimeout(() => {
-//             resolve(fetch(urlD))
-//         }, time)
-//     })
-// }
+
+// Time delay promise function
+let delayRequest = (url, time) => {
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            resolve(fetch(url))
+        }, time)
+    })
+}
 
 
 let getWeatherData = async (ev) => {
@@ -69,9 +71,7 @@ let getWeatherData = async (ev) => {
     try {
         for (city of cities) {
             const UrlWeather = `https://api.openweathermap.org/data/2.5/weather?q=${city}&APPID=${apiKey}`;
-            let res = await fetch(UrlWeather);
-            // console.log(res);
-            
+            let res = await delayRequest(UrlWeather, 500);            
             let weatherData = await res.json();
             let section = document.createElement('SECTION');
             let name = document.createElement('H1');
@@ -109,8 +109,8 @@ let getWeatherData = async (ev) => {
 
     } catch (errorMsg) {
         warning.innerText = 'The city you have typed does not exist!';
-    };
-    // warning.innerHTML = '';
+    }
+    // warning.innerText = '';
     // inputField.value = '';
 }
 
