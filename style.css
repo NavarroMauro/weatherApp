@@ -1,0 +1,59 @@
+#title {
+  font-size: 2em;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#warning {
+  margin-top: 1em;
+  text-align: center;
+  color: red;
+  font-size: 2em;
+}
+
+input {
+  width: 21vw;
+  height: 2em;
+  margin-bottom: 1em;
+}
+
+button {
+  color: white;
+  width: 300px;
+  border-radius: 8px;
+  height: 3em;
+  background: darkgoldenrod;
+}
+
+#container {
+    display: flex;
+    margin: 1vw auto;
+    flex-wrap: wrap;
+}
+
+#container section {
+  width: 25vw;
+    border: 0.1vw solid black;
+    padding: 1.5vw 2vw;
+    font-size: 2.5vw;
+    font-family: tahoma;
+    color: black;
+    margin: 1.5vw .8vw;
+}
+
+h1 {
+  font-size: 1em;
+  text-align: center;
+}
+
+h3 {
+    font-size: .7em;
+}
+
+span {
+  font-size: .6em;
+}
